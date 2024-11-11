@@ -27,9 +27,7 @@ function createTodo() {
             const li = document.createElement("li")
             li.innerText = todos[todos.length - 1]
             ul.appendChild(li)
-            li.addEventListener("click", function() {
-            li.remove()
-            todos.splice(todos.indexOf(li.innerText), 1)
+            li.addEventListener("click", deleteTodos())
             saveTodos()
             } else {
             alert()
@@ -46,10 +44,12 @@ function rebuild() {
         const li = document.createElement("li")
         li.innerText = todo
         ul.appendChild(li)
-        li.addEventListener("click", function() {
-            li.remove()
-            todos.splice(todos.indexOf(li.innerText), 1)
-            saveTodos()
-        })      
+        li.addEventListener("click", deleteTodos())      
     });
+}
+
+function deleteTodos() {
+    li.remove()
+    todos.splice(todos.indexOf(li.innerText), 1)
+    saveTodos()
 }
