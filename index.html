@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ToDo</title>
+</head>
+<body>
+    <div class="container">
+        <div class="todoApp" id="todoApp">
+            <h2>To<mark class="do">Do</mark><mark class="do2">Do</mark><mark class="do3">Do</mark><mark class="do4">Do</mark></h2>
+            <label for="input">
+                <input type="text" class="input" id="input" placeholder="Add your to-do's">
+            </label>            
+            <button type="submit" onclick="createTodo()" class="submit" id="submit">Submit</button>
+            <div class="lists">
+                <ul class="todos" id="todos"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
