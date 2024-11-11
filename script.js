@@ -27,6 +27,10 @@ function createTodo() {
             const li = document.createElement("li")
             li.innerText = todos[todos.length - 1]
             ul.appendChild(li)
+            li.addEventListener("click", function() {
+            li.remove()
+            todos.splice(todos.indexOf(li.innerText), 1)
+            saveTodos()
             } else {
             alert()
         }
