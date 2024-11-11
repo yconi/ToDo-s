@@ -18,10 +18,9 @@ rebuild()
 function createTodo() {
     const input = document.getElementById("input") 
     console.log(input.value)
-    if (input.value !== "" || input.value !== " ") {
+    if (input.value !== "" && input.value !== " " && input.value !== null) {
         todos.push(input.value)
         input.value = ""
-        console.log(todos)
         const ul = document.getElementById("todos")
         saveTodos()
         if (todos) {
@@ -31,7 +30,10 @@ function createTodo() {
             } else {
             alert()
         }
-    } else {}
+    } else {
+        window.alert("Insira um valor valido.")
+        input.value = ""
+    }
 }
 
 function rebuild() {
@@ -43,7 +45,6 @@ function rebuild() {
         li.addEventListener("click", function() {
             li.remove()
             todos.splice(todos.indexOf(li.innerText), 1)
-            console.log(todos)
             saveTodos()
         })      
     });
